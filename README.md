@@ -12,7 +12,7 @@ This service is built to interact with Uniswap V3 pools on the Ethereum blockcha
 ## Installation
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/uniswap-v3-management-service.git
+git clone https://github.com/OxMarco/uniswap-v3-management-service.git
 cd uniswap-v3-management-service
 ```
 2. Install dependencies:

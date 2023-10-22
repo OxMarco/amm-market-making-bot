@@ -1,8 +1,8 @@
 {
-  "name": "backend",
+  "name": "uniswap-v3-management-service",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "A Uniswap V3 Position Management Service",
+  "author": "OxMarco",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
