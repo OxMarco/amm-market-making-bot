@@ -36,3 +36,8 @@ export async function balance(
 
   return { balance, decimals };
 }
+
+export async function tokenInfo(token: string, provider: any) {
+  const tokenContract = new ethers.Contract(token, ERC20_ABI, provider);
+  
+}

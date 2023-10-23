@@ -1,5 +1,7 @@
 import { ethers } from 'ethers';
 import IUniswapV3PoolABI from '@uniswap/v3-core/artifacts/contracts/interfaces/IUniswapV3Pool.sol/IUniswapV3Pool.json';
+import { Pool } from '@uniswap/v3-sdk';
+import { Token } from '@uniswap/sdk-core';
 
 export async function getPoolInfo(poolAddress: string, provider: any) {
   const poolContract = new ethers.Contract(
@@ -28,6 +30,20 @@ export async function getPoolInfo(poolAddress: string, provider: any) {
     tick: slot0[1],
   };
 }
+
+export const setupPool = async () => {
+  const configuredPool = new Pool(
+    new Token(token0),
+    token0Amount.currency,
+    token1Amount.currency,
+    poolInfo.fee,
+    poolInfo.sqrtPriceX96.toString(),
+    poolInfo.liquidity.toString(),
+    poolInfo.tick
+  )
+}
+
+/////////////////////////
 
 export async function rebalanceLiquidity(
   poolAddress: string,
@@ -70,10 +86,10 @@ export async function mintLiquidity(
   poolAddress: string,
   tickLower: number,
   tickUpper: number,
-  amount0Desired: bigint,
-  amount1Desired: bigint,
+  amount: bigint,
+  data: string,
   deadline: number,
-  gasPrice: bigint,
+  gasPrice: number,
   signer: any,
 ) {
   const poolContract = new ethers.Contract(
@@ -86,8 +102,8 @@ export async function mintLiquidity(
     signer.getAddress(),
     tickLower,
     tickUpper,
-    amount0Desired,
-    amount1Desired,
+    amount,
+    data,
     {
       gasPrice,
       deadline,

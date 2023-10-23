@@ -64,10 +64,10 @@ export class AppService {
     poolAddress: string,
     tickLower: number,
     tickUpper: number,
-    amount0Desired: bigint,
-    amount1Desired: bigint,
+    amount: bigint,
+    data: string,
     deadline: number,
-    gasPrice: bigint,
+    gasPrice: number,
   ) {
     this.logger.log(`New position for pool ${poolAddress} created`);
 
@@ -75,8 +75,8 @@ export class AppService {
       poolAddress,
       tickLower,
       tickUpper,
-      amount0Desired,
-      amount1Desired,
+      amount,
+      data,
       deadline,
       gasPrice,
       this.signer,

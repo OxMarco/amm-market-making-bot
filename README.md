@@ -15,6 +15,7 @@ This service is built to interact with Uniswap V3 pools on the Ethereum blockcha
 git clone https://github.com/OxMarco/uniswap-v3-management-service.git
 cd uniswap-v3-management-service
 ```
+
 2. Install dependencies:
 ```bash
 npm install
@@ -33,6 +34,12 @@ API_KEY=some_random_string
 npm run build
 npm run start
 
+## Tests
+Run the tests:
+```bash
+npx hardhat node --fork ALCHEMY_URL
+```
+Pick one of the addresses from the console and add it to the .env file as the `PRIVATE_KEY` variable and use *http://127.0.0.1:8545* ad the `RPC_URL` variable.
 
 ## Expected Usage and Applications
 

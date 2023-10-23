@@ -8,6 +8,6 @@ export class IsEthereumAddress implements ValidatorConstraintInterface {
   }
 
   defaultMessage(args: ValidationArguments) {
-    return 'Address ($value) is not a valid Ethereum address';
+    return `${args.property} must be a valid Ethereum address`;
   }
 }
