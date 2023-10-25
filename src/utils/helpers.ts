@@ -30,6 +30,7 @@ export const fractionToPrice = (
   );
 };
 
+/*
 export function ethToTokenValue(value: bigint, pool: Pool) {
   return pool.token0.address === WETH_ADDRESS
     ? pool.token0Price.quote(
@@ -39,6 +40,7 @@ export function ethToTokenValue(value: bigint, pool: Pool) {
         .quote(CurrencyAmount.fromRawAmount(pool.token1, value.toString()))
         .quotient.toString(10);
 }
+*/
 
 export function calculatePriceRange(
   currentPrice: Price<Token, Token>,
