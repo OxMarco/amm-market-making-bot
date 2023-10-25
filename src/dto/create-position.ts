@@ -1,4 +1,10 @@
-import { IsNotEmpty, IsNumber, IsPositive, IsString, Validate } from 'class-validator';
+import {
+  IsNotEmpty,
+  IsNumber,
+  IsPositive,
+  IsString,
+  Validate,
+} from 'class-validator';
 import { IsEthereumAddress } from './ethereum-address.validator';
 import { IsBigInt } from './bigint.validator';
 

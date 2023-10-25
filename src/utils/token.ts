@@ -37,7 +37,12 @@ export async function balance(
   return { balance, decimals };
 }
 
-export async function tokenInfo(token: string, provider: any) {
+export async function getTokenInfo(token: string, provider: any) {
   const tokenContract = new ethers.Contract(token, ERC20_ABI, provider);
-  
+
+  return {
+    name: await tokenContract.name(),
+    symbol: await tokenContract.symbol(),
+    decimals: Number((await tokenContract.decimals()).toString()),
+  };
 }
